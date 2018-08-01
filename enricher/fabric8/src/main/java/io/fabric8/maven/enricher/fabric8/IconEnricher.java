@@ -39,6 +39,7 @@ import java.util.Map;
 
 import static io.fabric8.maven.core.util.MavenUtil.hasClass;
 import static io.fabric8.maven.core.util.MavenUtil.hasPlugin;
+import static io.fabric8.maven.core.util.MavenUtil.hasPluginOfAnyGroupId;
 import static io.fabric8.utils.Files.guessMediaType;
 
 /**
@@ -158,7 +159,7 @@ public class IconEnricher extends BaseEnricher {
         if (hasClass(project, "org.apache.camel.CamelContext")) {
             return "camel";
         }
-        if (hasPlugin(project,"org.springframework.boot:spring-boot-maven-plugin")  ||
+        if (hasPluginOfAnyGroupId(project, "spring-boot-maven-plugin")  ||
             hasClass(project, "org.springframework.boot.SpringApplication")) {
             return "spring-boot";
         }
