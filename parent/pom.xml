@@ -19,7 +19,7 @@
 
   <groupId>io.fabric8</groupId>
   <artifactId>fabric8-maven-parent</artifactId>
-  <version>3.5.33.fuse-710023</version>
+  <version>3.5.33.fuse-710025</version>
   <packaging>pom</packaging>
 
   <prerequisites>
@@ -60,14 +60,14 @@
     <assertj.core.version>2.4.1</assertj.core.version>
 
     <!-- latest release version of this plugin. Used in the docs.-->
-    <fabric8.maven.plugin.version>3.5.33.fuse-710023</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.5.33.fuse-710025</fabric8.maven.plugin.version>
 
     <version.maven>3.3.1</version.maven>
     <version.jacoco>0.7.8</version.jacoco>
-    <version.fabric8>3.0.11.fuse-710023</version.fabric8>
-    <version.kubernetes-client>3.1.4.fuse-710004</version.kubernetes-client>
+    <version.fabric8>3.0.11.fuse-710025</version.fabric8>
+    <version.kubernetes-client>3.1.4.fuse-710005</version.kubernetes-client>
     <version.mockwebserver>0.0.13</version.mockwebserver>
-    <version.docker-maven-plugin>0.23.0.fuse-710004</version.docker-maven-plugin>
+    <version.docker-maven-plugin>3.0.11.fuse-710001</version.docker-maven-plugin>
     <version.networknt.validator>0.1.7</version.networknt.validator>
 
     <!-- =======================================================  -->
@@ -107,7 +107,7 @@
 
     <image.java.redhat.s2i>fuse7/fuse-java-openshift:1.0</image.java.redhat.s2i>
     <image.java.redhat.docker>fuse7/fuse-java-openshift:1.0</image.java.redhat.docker>
-    <image.java.redhat.istag>jboss-fuse70-java-openshift:1.0</image.java.redhat.istag>
+    <image.java.redhat.istag>fuse7-java-openshift:1.0</image.java.redhat.istag>
 
     <!-- karaf -->
     <image.karaf.upstream.docker>fabric8/s2i-karaf:${version.image.karaf.upstream.docker}</image.karaf.upstream.docker>
@@ -116,7 +116,7 @@
 
     <image.karaf.redhat.docker>fuse7/fuse-karaf-openshift:1.0</image.karaf.redhat.docker>
     <image.karaf.redhat.s2i>fuse7/fuse-karaf-openshift:1.0</image.karaf.redhat.s2i>
-    <image.karaf.redhat.istag>jboss-fuse70-karaf-openshift:1.0</image.karaf.redhat.istag>
+    <image.karaf.redhat.istag>fuse7-karaf-openshift:1.0</image.karaf.redhat.istag>
 
     <!-- webapp -->
     <image.tomcat.upstream>fabric8/tomcat-8:${version.image.tomcat.upstream}</image.tomcat.upstream>
