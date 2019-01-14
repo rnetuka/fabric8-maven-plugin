@@ -594,7 +594,7 @@ This information will be enriched as annotations in the generated manifest like,
 ----
 
 
-[[f8-service discovery]]
+[[f8-service-discovery]]
 ==== f8-service-discovery
 
 This enricher can be used to add service annotations to facilitate automated discovery of
