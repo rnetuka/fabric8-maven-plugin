@@ -61,7 +61,8 @@
 
     <!-- latest release version of this plugin. Used in the docs.-->
     <fabric8.maven.plugin.version>3.5.31</fabric8.maven.plugin.version>
-
+    
+    <jmockit.version>1.43</jmockit.version>
     <version.maven>3.3.1</version.maven>
     <version.jacoco>0.7.8</version.jacoco>
     <version.fabric8>3.0.8</version.fabric8>
@@ -312,13 +313,13 @@
       <dependency>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-utils</artifactId>
-        <version>3.0.22</version>
+        <version>3.1.0</version>
       </dependency>
 
       <dependency>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-component-annotations</artifactId>
-        <version>1.5.5</version>
+        <version>1.7.1</version>
       </dependency>
 
       <dependency>
@@ -397,6 +398,12 @@
         <artifactId>mockwebserver</artifactId>
         <version>${version.mockwebserver}</version>
         <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
 
       <!-- == doc ====================================== -->
@@ -466,7 +473,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
-          <version>3.4</version>
+          <version>3.5</version>
         </plugin>
 
         <plugin>
@@ -502,7 +509,7 @@
         <plugin>
           <groupId>org.codehaus.plexus</groupId>
           <artifactId>plexus-component-metadata</artifactId>
-          <version>1.6</version>
+          <version>1.7.1</version>
         </plugin>
 
         <plugin>
@@ -538,7 +545,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
+          <version>2.22.1</version>
+          <configuration>
+             <runOrder>alphabetical</runOrder>
+             <argLine>
+              -javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+            </argLine>
+          </configuration>
         </plugin>
 
         <plugin>
@@ -742,6 +755,19 @@
 
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>java9-plus</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>javax.xml.bind</groupId>
+          <artifactId>jaxb-api</artifactId>
+          <version>2.3.0</version>
+        </dependency>
+      </dependencies>
     </profile>
 
   </profiles>
