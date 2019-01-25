@@ -24,11 +24,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import mockit.Expectations;
-import mockit.FullVerificationsInOrder;
+import mockit.VerificationsInOrder;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
-@RunWith(JMockit.class)
 public class DockerBuildServiceTest {
 
     @Mocked
@@ -63,7 +61,7 @@ public class DockerBuildServiceTest {
         DockerBuildService service = new DockerBuildService(hub, config);
         service.build(image);
 
-        new FullVerificationsInOrder() {{
+        new VerificationsInOrder() {{
             buildService.buildImage(image, context);
             buildService.tagImage(imageName, image);
         }};

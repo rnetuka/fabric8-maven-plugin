@@ -25,7 +25,6 @@ import io.fabric8.maven.core.util.JSONUtil;
 import io.fabric8.maven.docker.util.Logger;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Before;
@@ -39,7 +38,6 @@ import static org.junit.Assert.*;
  * @since 07/02/17
  */
 
-@RunWith(JMockit.class)
 public class InitContainerHandlerTest {
 
     @Mocked

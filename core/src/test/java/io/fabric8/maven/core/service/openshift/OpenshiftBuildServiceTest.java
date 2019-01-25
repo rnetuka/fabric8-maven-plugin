@@ -58,13 +58,11 @@ import org.slf4j.LoggerFactory;
 import mockit.Expectations;
 import mockit.Mocked;
 import mockit.Verifications;
-import mockit.integration.junit4.JMockit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-@RunWith(JMockit.class)
 public class OpenshiftBuildServiceTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(OpenshiftBuildServiceTest.class);

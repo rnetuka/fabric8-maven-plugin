@@ -36,9 +36,7 @@ import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
-@RunWith(JMockit.class)
 @Ignore("Doesn't work because of problems in MockWebserver")
 public class PortForwardServiceTest {
 

@@ -4,7 +4,6 @@ import io.fabric8.maven.core.util.PrefixedLogger;
 import io.fabric8.maven.generator.api.PortsExtractor;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.project.MavenProject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +18,6 @@ import java.util.Map;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
-@RunWith(JMockit.class)
 public class AbstractPortsExtractorTest {
 
     @Mocked

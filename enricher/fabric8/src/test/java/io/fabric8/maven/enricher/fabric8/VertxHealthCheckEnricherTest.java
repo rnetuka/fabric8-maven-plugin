@@ -6,7 +6,6 @@ import io.fabric8.maven.core.config.ProcessorConfig;
 import io.fabric8.maven.enricher.api.EnricherContext;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -19,7 +18,6 @@ import static org.junit.Assert.*;
 /**
  * @author <a href="http://escoffier.me">Clement Escoffier</a>
  */
-@RunWith(JMockit.class)
 public class VertxHealthCheckEnricherTest {
 
 
@@ -115,9 +113,12 @@ public class VertxHealthCheckEnricherTest {
                 )
         );
 
+        final Properties props = new Properties();
         new Expectations() {{
             context.getConfig();
             result = config;
+            context.getProject().getProperties();
+            result = props;
         }};
 
         VertxHealthCheckEnricher enricher = new VertxHealthCheckEnricher(context);
@@ -157,15 +158,22 @@ public class VertxHealthCheckEnricherTest {
                                 ))
                 )
         );
-
+        final Properties props = new Properties();
         new Expectations() {{
             context.getConfig();
             result = config;
+            context.getProject().getProperties();
+            result = props;
         }};
 
         VertxHealthCheckEnricher enricher = new VertxHealthCheckEnricher(context);
 
-        Probe probe = enricher.getLivenessProbe();
+        Probe probe = null;
+        try {
+            probe = enricher.getLivenessProbe();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         assertNotNull(probe);
         assertNull(probe.getHttpGet().getHost());
         assertEquals(probe.getHttpGet().getScheme(), "HTTPS");
@@ -278,9 +286,12 @@ public class VertxHealthCheckEnricherTest {
                 )
         );
 
+        final Properties props = new Properties();
         new Expectations() {{
             context.getConfig();
             result = config;
+            context.getProject().getProperties();
+            result = props;
         }};
 
         VertxHealthCheckEnricher enricher = new VertxHealthCheckEnricher(context);
@@ -328,9 +339,12 @@ public class VertxHealthCheckEnricherTest {
                 )
         );
 
+        final Properties props = new Properties();
         new Expectations() {{
             context.getConfig();
             result = config;
+            context.getProject().getProperties();
+            result = props;
         }};
 
         VertxHealthCheckEnricher enricher = new VertxHealthCheckEnricher(context);
@@ -381,9 +395,12 @@ public class VertxHealthCheckEnricherTest {
                 )
         );
 
+        final Properties props = new Properties();
         new Expectations() {{
             context.getConfig();
             result = config;
+            context.getProject().getProperties();
+            result = props;
         }};
 
         VertxHealthCheckEnricher enricher = new VertxHealthCheckEnricher(context);

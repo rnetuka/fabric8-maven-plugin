@@ -13,11 +13,9 @@ import java.util.Map;
 import io.fabric8.maven.core.util.PrefixedLogger;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(JMockit.class)
 public class VertxPortsExtractorTest {
 
     @Mocked

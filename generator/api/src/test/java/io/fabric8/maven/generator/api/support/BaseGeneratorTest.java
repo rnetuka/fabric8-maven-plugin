@@ -37,7 +37,6 @@ import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
 import static io.fabric8.maven.core.config.OpenShiftBuildStrategy.SourceStrategy.kind;
 import static io.fabric8.maven.core.config.OpenShiftBuildStrategy.SourceStrategy.name;
@@ -52,7 +51,6 @@ import static org.junit.Assert.fail;
  * @author roland
  * @since 10/01/17
  */
-@RunWith(JMockit.class)
 public class BaseGeneratorTest {
 
     @Mocked
