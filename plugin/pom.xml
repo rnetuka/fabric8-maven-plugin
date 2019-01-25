@@ -28,7 +28,9 @@
   <packaging>maven-plugin</packaging>
 
   <name>Fabric8 Maven :: Plugin</name>
-
+  <properties>
+    <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
+  </properties>
   <dependencies>
 
     <!-- == docker-maven-plugin ========================= -->
@@ -211,6 +213,13 @@
             </goals>
           </execution>
         </executions>
+        <dependencies>
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>${javax.ws.rs-api.version}</version>
+            </dependency>
+        </dependencies>
       </plugin>
 
     </plugins>
