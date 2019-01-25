@@ -56,8 +56,9 @@
     <assertj.core.version>2.4.1</assertj.core.version>
 
     <!-- latest release version of this plugin. Used in the docs.-->
-    <fabric8.maven.plugin.version>3.5.40</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.5.42</fabric8.maven.plugin.version>
 
+    <jmockit.version>1.43</jmockit.version>
     <version.maven>3.3.1</version.maven>
     <version.jacoco>0.7.8</version.jacoco>
     <version.fabric8>3.0.12</version.fabric8>
