@@ -27,7 +27,6 @@ import io.fabric8.maven.docker.config.ImageConfiguration;
 import io.fabric8.maven.enricher.api.EnricherContext;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.project.MavenProject;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -44,7 +43,6 @@ import static org.junit.Assert.assertThat;
  * @author kamesh
  * @since 08/05/17
  */
-@RunWith(JMockit.class)
 public class DefaultControllerEnricherTest {
 
     @Mocked

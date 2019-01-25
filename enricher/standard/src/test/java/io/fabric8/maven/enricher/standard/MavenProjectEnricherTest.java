@@ -31,7 +31,6 @@ import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -42,7 +41,6 @@ import static org.junit.Assert.assertNull;
  *
  * @author nicola
  */
-@RunWith(JMockit.class)
 public class MavenProjectEnricherTest {
 
     @Mocked

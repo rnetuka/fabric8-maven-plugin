@@ -26,7 +26,6 @@ import static org.junit.Assert.*;
 /**
  * @author <a href="http://escoffier.me">Clement Escoffier</a>
  */
-@RunWith(JMockit.class)
 public class VertxHealthCheckEnricherTest {
 
 

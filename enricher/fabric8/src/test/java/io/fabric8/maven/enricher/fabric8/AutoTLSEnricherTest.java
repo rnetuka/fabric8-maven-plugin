@@ -28,7 +28,6 @@ import io.fabric8.maven.enricher.api.Kind;
 import io.fabric8.maven.enricher.api.util.InitContainerHandler;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.project.MavenProject;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -37,7 +36,6 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-@RunWith(JMockit.class)
 public class AutoTLSEnricherTest {
 
     @Mocked

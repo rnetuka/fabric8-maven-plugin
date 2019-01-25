@@ -25,7 +25,6 @@ import io.fabric8.maven.docker.config.ImageConfiguration;
 import io.fabric8.maven.enricher.api.EnricherContext;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -35,7 +34,6 @@ import static org.junit.Assert.*;
  * @author roland
  * @since 23/09/16
  */
-@RunWith(JMockit.class)
 public class EnricherManagerTest {
 
     @Mocked
