@@ -132,6 +132,13 @@ public class BuildMojo extends io.fabric8.maven.docker.BuildMojo {
     private String s2iBuildNameSuffix;
 
     /**
+     * The name of pullSecret to be used to pull the base image in case pulling from a private
+     * registry which requires authentication.
+     */
+    @Parameter(property = "fabric8.build.pullSecret", defaultValue = "pullsecret-fabric8")
+    private String openshiftPullSecret;
+
+    /**
      * Allow the ImageStream used in the S2I binary build to be used in standard
      * Kubernetes resources such as Deployment or StatefulSet.
      */
@@ -259,6 +266,7 @@ public class BuildMojo extends io.fabric8.maven.docker.BuildMojo {
                 .dockerMojoParameters(createMojoParameters())
                 .buildRecreateMode(BuildRecreateMode.fromParameter(buildRecreate))
                 .openshiftBuildStrategy(buildStrategy)
+                .openshiftPullSecret(openshiftPullSecret)
                 .s2iBuildNameSuffix(s2iBuildNameSuffix)
                 .s2iImageStreamLookupPolicyLocal(s2iImageStreamLookupPolicyLocal)
                 .buildDirectory(project.getBuild().getDirectory())
