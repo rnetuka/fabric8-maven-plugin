@@ -64,7 +64,7 @@
     <version.fabric8>3.0.12</version.fabric8>
     <version.kubernetes-client>3.2.0</version.kubernetes-client>
     <version.mockwebserver>0.0.13</version.mockwebserver>
-    <version.docker-maven-plugin>0.22.1</version.docker-maven-plugin>
+    <version.docker-maven-plugin>0.23.0</version.docker-maven-plugin>
     <version.networknt.validator>0.1.7</version.networknt.validator>
     <version.jgit>5.0.1.201806211838-r</version.jgit>
     <version.hamcrest-library>1.3</version.hamcrest-library>
@@ -366,6 +366,12 @@
         <version>1.0-alpha-6</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-interpolation</artifactId>
+        <version>1.22</version>
+      </dependency>
+    
       <!-- == test ====================================== -->
 
       <dependency>
