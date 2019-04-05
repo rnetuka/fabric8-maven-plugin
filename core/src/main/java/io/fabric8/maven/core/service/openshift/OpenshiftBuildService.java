@@ -365,7 +365,7 @@ public class OpenshiftBuildService implements BuildService {
                 boolean hasPullSecret = client.secrets().withName(pullSecretName).get() != null;
 
                 if (!hasPullSecret) {
-                    log.info("Creating Secret %s", hasPullSecret);
+                    log.info("Creating Secret %s", pullSecretName);
                     builder.addNewSecretItem()
                             .withNewMetadata()
                             .withName(pullSecretName)
