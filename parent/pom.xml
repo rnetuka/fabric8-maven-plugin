@@ -19,7 +19,7 @@
 
   <groupId>io.fabric8</groupId>
   <artifactId>fabric8-maven-parent</artifactId>
-  <version>3.5.33.fuse-740025</version>
+  <version>3.5.33.fuse-740025-redhat-00001</version>
   <packaging>pom</packaging>
 
   <prerequisites>
@@ -60,15 +60,15 @@
     <assertj.core.version>2.4.1</assertj.core.version>
 
     <!-- latest release version of this plugin. Used in the docs.-->
-    <fabric8.maven.plugin.version>3.5.33.fuse-740025</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.5.33.fuse-740025-redhat-00001</fabric8.maven.plugin.version>
     
     <jmockit.version>1.43</jmockit.version>
     <version.maven>3.3.1</version.maven>
     <version.jacoco>0.7.8</version.jacoco>
-    <version.fabric8>3.0.11.fuse-740025</version.fabric8>
-    <version.kubernetes-client>3.1.12.fuse-740020</version.kubernetes-client>
+    <version.fabric8>3.0.11.fuse-740025-redhat-00001</version.fabric8>
+    <version.kubernetes-client>3.1.12.fuse-740020-redhat-00001</version.kubernetes-client>
     <version.mockwebserver>0.0.13</version.mockwebserver>
-    <version.docker-maven-plugin>0.23.0.fuse-740005</version.docker-maven-plugin>
+    <version.docker-maven-plugin>0.23.0.fuse-740005-redhat-00001</version.docker-maven-plugin>
     <version.networknt.validator>0.1.7</version.networknt.validator>
 
     <!-- =======================================================  -->
