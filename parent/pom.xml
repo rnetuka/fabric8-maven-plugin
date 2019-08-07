@@ -90,6 +90,11 @@
     <version.image.karaf.redhat.s2i>${version.image.karaf.redhat.docker}</version.image.karaf.redhat.s2i>
 
     <!-- =======================================================  -->
+    <!-- === FasterXml Jackson 2 version to be aligned on -->
+    <!-- Upstream -->
+    <version.jackson2>2.9.9</version.jackson2>
+
+    <!-- =======================================================  -->
     <!-- Servlet container images -->
     <version.image.tomcat.upstream>1.2.0</version.image.tomcat.upstream>
     <version.image.jetty.upstream>1.5.1</version.image.jetty.upstream>
@@ -292,9 +297,44 @@
       </dependency>
 
       <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${version.jackson2}.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${version.jackson2}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${version.jackson2}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.jaxrs</groupId>
+        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <version>${version.jackson2}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.module</groupId>
+        <artifactId>jackson-module-jaxb-annotations</artifactId>
+        <version>${version.jackson2}</version>
+      </dependency>
+      <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-yaml</artifactId>
-        <version>2.8.6</version>
+        <version>${version.jackson2}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-xml</artifactId>
+        <version>${version.jackson2}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-dataformat-joda</artifactId>
+        <version>${version.jackson2}</version>
       </dependency>
 
       <dependency>
