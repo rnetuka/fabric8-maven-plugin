@@ -19,12 +19,11 @@
   <parent>
     <groupId>io.fabric8</groupId>
     <artifactId>fabric8-maven-parent</artifactId>
-    <version>3.5.33</version>
+    <version>3.5.33-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
   <artifactId>fabric8-maven-plugin</artifactId>
-  <version>3.5.33</version>
   <packaging>maven-plugin</packaging>
 
   <name>Fabric8 Maven :: Plugin</name>
@@ -32,6 +31,11 @@
     <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
   </properties>
   <dependencies>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
 
     <!-- == docker-maven-plugin ========================= -->
 
@@ -118,6 +122,12 @@
     <dependency>
       <groupId>io.fabric8</groupId>
       <artifactId>fabric8-project-utils</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- == Maven Plugin API ============================ -->
