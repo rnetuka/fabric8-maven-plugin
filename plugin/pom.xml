@@ -31,6 +31,11 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+
     <!-- == docker-maven-plugin ========================= -->
 
     <dependency>
@@ -126,6 +131,12 @@
     <dependency>
       <groupId>io.fabric8</groupId>
       <artifactId>fabric8-project-utils</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- == Maven Plugin API ============================ -->
