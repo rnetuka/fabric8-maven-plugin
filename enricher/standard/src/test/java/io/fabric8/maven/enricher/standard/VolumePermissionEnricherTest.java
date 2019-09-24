@@ -28,7 +28,6 @@ import io.fabric8.maven.enricher.api.util.InitContainerHandler;
 import io.fabric8.utils.Strings;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
@@ -37,7 +36,6 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-@RunWith(JMockit.class)
 public class VolumePermissionEnricherTest {
 
     @Mocked

@@ -20,7 +20,6 @@ import io.fabric8.maven.enricher.api.EnricherContext;
 import io.fabric8.maven.enricher.api.Kind;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.model.IssueManagement;
 import org.apache.maven.model.Scm;
 import org.apache.maven.project.MavenProject;
@@ -35,7 +34,6 @@ import static junit.framework.TestCase.*;
 /**
  * @author kameshs
  */
-@RunWith(JMockit.class)
 public class MavenIssueManagementEnricherTest {
 
     @Mocked

@@ -58,6 +58,7 @@
     <!-- latest release version of this plugin. Used in the docs.-->
     <fabric8.maven.plugin.version>3.5.40</fabric8.maven.plugin.version>
 
+    <jmockit.version>1.43</jmockit.version>
     <version.maven>3.3.1</version.maven>
     <version.jacoco>0.7.8</version.jacoco>
     <version.fabric8>3.0.12</version.fabric8>
@@ -610,8 +611,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
           <compilerArgument>-Xlint:deprecation</compilerArgument>
         </configuration>
       </plugin>

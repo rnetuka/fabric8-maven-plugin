@@ -8,7 +8,6 @@ import io.fabric8.maven.docker.config.ImageConfiguration;
 import io.fabric8.maven.docker.util.Logger;
 import io.fabric8.maven.generator.api.GeneratorContext;
 import mockit.*;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.model.Build;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.project.MavenProject;
@@ -32,7 +31,6 @@ import static org.junit.Assert.assertNull;
  * @author: Oliver Weise
  * @since: 2016-11-30
  */
-@RunWith(JMockit.class)
 public class JavaExecGeneratorMainClassDeterminationTest {
 
     @Mocked

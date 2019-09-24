@@ -34,7 +34,6 @@ import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -45,7 +44,6 @@ import static org.junit.Assert.assertNull;
  * @author roland
  * @since 28/11/16
  */
-@RunWith(JMockit.class)
 public class SpringBootGeneratorTest {
 
     @Mocked

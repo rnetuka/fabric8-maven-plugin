@@ -27,7 +27,6 @@ import io.fabric8.openshift.api.model.*;
 import io.fabric8.openshift.client.OpenShiftClient;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -41,7 +40,6 @@ import static org.junit.Assert.*;
  * @author roland
  * @since 16/01/17
  */
-@RunWith(JMockit.class)
 public class ImageStreamServiceTest {
 
     @Mocked

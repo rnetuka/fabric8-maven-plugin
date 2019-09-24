@@ -34,14 +34,12 @@ import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
 import static junit.framework.TestCase.assertEquals;
 
 /**
  * @author yuwzho
  */
-@RunWith(JMockit.class)
 public class DockerRegistrySecretEnricherTest {
 
     @Mocked
@@ -105,7 +103,7 @@ public class DockerRegistrySecretEnricherTest {
             {
                 {
                     context.getSettings();
-                    returns(new Settings());
+                    result = createSettings();
                 }
             }
         };

@@ -28,7 +28,6 @@ import io.fabric8.maven.enricher.api.EnricherContext;
 import io.fabric8.openshift.api.model.ImageChangeTrigger;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -42,7 +41,6 @@ import static junit.framework.TestCase.*;
 /**
  * @author nicola
  */
-@RunWith(JMockit.class)
 public class TriggersAnnotationEnricherTest {
 
     @Mocked
