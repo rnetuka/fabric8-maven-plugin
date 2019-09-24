@@ -23,7 +23,6 @@ import io.fabric8.maven.core.config.PlatformMode;
 import io.fabric8.maven.docker.util.Logger;
 import io.fabric8.openshift.client.OpenShiftClient;
 import io.fabric8.openshift.client.server.mock.OpenShiftMockServer;
-import mockit.integration.junit4.JMockit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import mockit.*;
@@ -33,7 +32,6 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-@RunWith(JMockit.class)
 public class ClusterAccessTest {
 
     @Mocked
