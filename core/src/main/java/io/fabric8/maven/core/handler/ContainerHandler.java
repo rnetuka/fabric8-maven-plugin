@@ -98,7 +98,8 @@ class ContainerHandler {
     }
 
     private String getImageName(ImageConfiguration imageConfiguration) {
-        if (Strings.isNullOrBlank(imageConfiguration.getName())) {
+        if (Strings.isNullOrBlank(imageConfiguration.getName())
+               || project.getProperties() == null) {
             return null;
         }
         String configuredRegistry = EnvUtil.findRegistry(

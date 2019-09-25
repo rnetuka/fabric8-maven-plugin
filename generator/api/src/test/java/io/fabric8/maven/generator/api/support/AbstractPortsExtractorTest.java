@@ -26,15 +26,12 @@ import java.util.Map;
 
 import org.apache.maven.project.MavenProject;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import io.fabric8.maven.core.util.PrefixedLogger;
 import io.fabric8.maven.generator.api.PortsExtractor;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
-@RunWith(JMockit.class)
 public class AbstractPortsExtractorTest {
 
     @Mocked

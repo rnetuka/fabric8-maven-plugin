@@ -5,7 +5,6 @@ import io.fabric8.kubernetes.api.model.Probe;
 import io.fabric8.maven.enricher.api.EnricherContext;
 import mockit.Expectations;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 import org.apache.maven.model.Build;
 import org.apache.maven.model.Model;
 import org.apache.maven.model.Plugin;
