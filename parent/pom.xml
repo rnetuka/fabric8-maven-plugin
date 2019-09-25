@@ -445,7 +445,7 @@
       <dependency>
         <groupId>org.jmockit</groupId>
         <artifactId>jmockit</artifactId>
-        <version>1.24</version>
+        <version>${jmockit.version}</version>
         <scope>test</scope>
       </dependency>
 

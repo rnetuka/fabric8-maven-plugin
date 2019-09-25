@@ -26,7 +26,6 @@ import java.util.Properties;
 import java.util.TreeMap;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -38,9 +37,8 @@ import mockit.Expectations;
 import mockit.Mock;
 import mockit.MockUp;
 import mockit.Mocked;
-import mockit.integration.junit4.JMockit;
 
-@RunWith(JMockit.class)
+
 public class SpaceLabelEnricherTest {
 
     @Mocked
