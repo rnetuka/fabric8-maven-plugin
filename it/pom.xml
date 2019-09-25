@@ -30,7 +30,7 @@ for running a single test.
   <parent>
     <groupId>io.fabric8</groupId>
     <artifactId>fabric8-maven-parent</artifactId>
-    <version>3.5.33-SNAPSHOT</version>
+    <version>3.5.33.fuse-750027</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
