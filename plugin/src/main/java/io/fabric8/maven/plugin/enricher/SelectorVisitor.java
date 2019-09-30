@@ -20,7 +20,8 @@ import java.util.Map;
 
 import io.fabric8.kubernetes.api.builder.TypedVisitor;
 import io.fabric8.kubernetes.api.model.*;
-import io.fabric8.kubernetes.api.model.extensions.*;
+import io.fabric8.kubernetes.api.model.apps.*;
+import io.fabric8.kubernetes.api.model.batch.JobSpecBuilder;
 import io.fabric8.maven.core.config.ProcessorConfig;
 import io.fabric8.maven.enricher.api.Kind;
 

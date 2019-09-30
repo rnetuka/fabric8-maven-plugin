@@ -35,7 +35,6 @@
         <fmp.version>${project.version}</fmp.version>
         <git.rules.version>0.0.4</git.rules.version>
         <embedded.maven.version>3.0.0</embedded.maven.version>
-        <kubernetes.assertions.version>3.0.8</kubernetes.assertions.version>
         <testng.version>6.13.1</testng.version>
         <okhttp.version>3.9.1</okhttp.version>
         <apache.commons.version>1.3.2</apache.commons.version>

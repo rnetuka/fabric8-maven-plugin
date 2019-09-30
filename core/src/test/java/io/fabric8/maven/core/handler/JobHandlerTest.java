@@ -15,7 +15,7 @@
  */
 package io.fabric8.maven.core.handler;
 
-import io.fabric8.kubernetes.api.model.Job;
+import io.fabric8.kubernetes.api.model.batch.Job;
 import io.fabric8.maven.core.config.ResourceConfig;
 import io.fabric8.maven.core.config.VolumeConfig;
 import io.fabric8.maven.docker.config.BuildImageConfiguration;

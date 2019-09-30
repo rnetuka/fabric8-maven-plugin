@@ -19,7 +19,7 @@ package io.fabric8.maven.plugin.enricher;
 import java.util.*;
 
 import io.fabric8.kubernetes.api.model.*;
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSet;
+import io.fabric8.kubernetes.api.model.apps.ReplicaSet;
 import io.fabric8.maven.core.config.ProcessorConfig;
 import io.fabric8.maven.docker.config.ImageConfiguration;
 import io.fabric8.maven.enricher.api.EnricherContext;

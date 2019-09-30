@@ -1,6 +1,10 @@
 package io.fabric8.maven.core.handler;
 
 import io.fabric8.kubernetes.api.model.*;
+import io.fabric8.kubernetes.api.model.batch.Job;
+import io.fabric8.kubernetes.api.model.batch.JobBuilder;
+import io.fabric8.kubernetes.api.model.batch.JobSpec;
+import io.fabric8.kubernetes.api.model.batch.JobSpecBuilder;
 import io.fabric8.maven.core.config.ResourceConfig;
 import io.fabric8.maven.docker.config.ImageConfiguration;
 import io.fabric8.kubernetes.api.KubernetesHelper;
@@ -20,7 +24,7 @@ public class JobHandler {
     }
 
     public Job getJob(ResourceConfig config,
-                                      List<ImageConfiguration> images) {
+                      List<ImageConfiguration> images) {
         return new JobBuilder()
                 .withMetadata(createJobSpecMetaData(config))
                 .withSpec(createJobSpec(config, images))
