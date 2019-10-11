@@ -20,13 +20,13 @@
     <parent>
         <artifactId>fabric8-maven-parent</artifactId>
         <groupId>io.fabric8</groupId>
-        <version>3.5.42.redhat-SNAPSHOT</version>
+        <version>3.5.42.fuse-750008</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fabric8-maven-rt</artifactId>
-    <version>3.5.42.redhat-SNAPSHOT</version>
+    <version>3.5.42.fuse-750008</version>
     <packaging>jar</packaging>
 
     <name>Fabric8 Maven :: Regression Test</name>
