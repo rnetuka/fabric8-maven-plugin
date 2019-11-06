@@ -93,7 +93,7 @@
     <!-- =======================================================  -->
     <!-- === FasterXml Jackson 2 version to be aligned on -->
     <!-- Upstream -->
-    <version.jackson2>2.9.9</version.jackson2>
+    <version.jackson2>2.9.10</version.jackson2>
 
     <!-- =======================================================  -->
     <!-- Servlet container images -->
@@ -300,7 +300,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>${version.jackson2}.2</version>
+        <version>${version.jackson2}.1</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
