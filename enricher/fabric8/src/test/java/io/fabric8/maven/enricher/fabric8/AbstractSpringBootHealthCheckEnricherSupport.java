@@ -120,7 +120,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServerContextPathPropertyKey(), "/p1");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p2");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/p2" + "/health", probe.getHttpGet().getPath());
@@ -136,7 +136,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServerContextPathPropertyKey(), "/p1");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -169,7 +169,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getManagementContextPathPropertyKey(), "/p2");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p3");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/p2/p3" + "/health", probe.getHttpGet().getPath());
@@ -186,7 +186,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getManagementContextPathPropertyKey(), "/");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -221,7 +221,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServletPathPropertyKey(), "/servlet");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p3");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/p2/p3" + "/health", probe.getHttpGet().getPath());
@@ -239,7 +239,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServletPathPropertyKey(), "/servlet");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -268,7 +268,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getManagementContextPathPropertyKey(), "/p1");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p2");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/p1/p2" +"/health", probe.getHttpGet().getPath());
@@ -283,7 +283,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getManagementContextPathPropertyKey(), "/");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -314,7 +314,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServerContextPathPropertyKey(), "/p2");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p3");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/p2/p1/p3" + "/health", probe.getHttpGet().getPath());
@@ -330,7 +330,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServerContextPathPropertyKey(), "/");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -359,7 +359,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServletPathPropertyKey(), "/servlet");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p1");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/servlet/p1" + "/health", probe.getHttpGet().getPath());
@@ -374,7 +374,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServletPathPropertyKey(), "/");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -405,7 +405,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getManagementContextPathPropertyKey(), "/p1");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p2");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/servlet/p1/p2" + "/health", probe.getHttpGet().getPath());
@@ -421,7 +421,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getManagementContextPathPropertyKey(), "/");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
@@ -454,7 +454,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServerContextPathPropertyKey(), "/p2");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/p3");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/p2/servlet/p1/p3" + "/health", probe.getHttpGet().getPath());
@@ -471,7 +471,7 @@ public abstract class AbstractSpringBootHealthCheckEnricherSupport {
         props.put(propertyHelper.getServerContextPathPropertyKey(), "/");
         props.put(propertyHelper.getActuatorBasePathPropertyKey(), "/");
 
-        Probe probe = enricher.buildProbe(props, 10, null, null, 3, 1);
+        Probe probe = enricher.buildProbe(props, 10, null, null);
         assertNotNull(probe);
         assertNotNull(probe.getHttpGet());
         assertEquals("/health", probe.getHttpGet().getPath());
