@@ -56,7 +56,7 @@ public class Verify {
         validator.setStrict(strict);
 
         DocumentContext actualContext = JsonPath.parse(actualText);
-        validator.validateJson(newMessage(actualText),
+        validator.validateJson("", newMessage(actualText),
                                newMessage(expectedText),
                                new JsonMessageValidationContext(),
                                createTestContext(),
