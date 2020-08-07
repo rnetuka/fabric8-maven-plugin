@@ -21,7 +21,7 @@
 
   <groupId>io.fabric8</groupId>
   <artifactId>fabric8-maven-plugin-parent</artifactId>
-  <version>4.3.1</version>
+  <version>4.3.1.redhat-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Fabric8 Maven :: Parent</name>
@@ -64,7 +64,7 @@
     <jmockit.version>1.43</jmockit.version>
     <version.maven>3.3.1</version.maven>
     <version.jacoco>0.8.2</version.jacoco>
-    <version.kubernetes-client>4.6.1</version.kubernetes-client>
+    <version.kubernetes-client>4.6.2</version.kubernetes-client>
     <version.openshift-client>${version.kubernetes-client}</version.openshift-client>
     <version.mockwebserver>0.0.13</version.mockwebserver>
     <version.docker-maven-plugin>0.31.0</version.docker-maven-plugin>
@@ -416,7 +416,7 @@
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.10</version>
+        <version>1.12</version>
       </dependency>
 
       <dependency>
