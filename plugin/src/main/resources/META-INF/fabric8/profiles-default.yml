@@ -74,13 +74,11 @@
     includes:
     - quarkus
     - spring-boot
-    - wildfly-swarm
     - thorntail-v2
     - openliberty
     - karaf
     - vertx
     - java-exec
-    - webapp
   watcher:
     includes:
     - spring-boot
@@ -103,12 +101,10 @@
     # The order given in "includes" is the order in which generators are called
     includes:
     - spring-boot
-    - wildfly-swarm
     - thorntail-v2
     - karaf
     - vertx
     - java-exec
-    - webapp
   enricher:
     includes:
     - fmp-name
