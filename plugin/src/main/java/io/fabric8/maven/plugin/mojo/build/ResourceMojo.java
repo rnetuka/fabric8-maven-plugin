@@ -67,6 +67,7 @@ import javax.validation.ConstraintViolationException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -446,6 +447,30 @@ public class ResourceMojo extends AbstractFabric8Mojo {
         if (namespace != null && !namespace.isEmpty()) {
             resources = new ResourceConfig.Builder(resources).withNamespace(namespace).build();
         }
+        // if no resources are configured in the pom.xml, create a new one because we'll be setting pod labels there
+        if (resources == null) {
+            resources = new ResourceConfig();
+        }
+        Properties podLabels = new Properties();
+        try (InputStream is = getClass().getResourceAsStream("/pod-labels.properties")) {
+            if (is != null) {
+                podLabels.load(is);
+                for (Map.Entry<Object, Object> entry : podLabels.entrySet()) {
+                    podLabels.replace(entry.getKey(), "${project.artifactId}", project.getArtifactId());
+                    podLabels.replace(entry.getKey(), "${project.version}", project.getVersion());
+                }
+                if (resources.getLabels().getPod() == null) {
+                    // if no pod labels have been set in the plugin configuration, set them as the new ones
+                    resources.getLabels().setPod(podLabels);
+                } else {
+                    // if pod labels have been defined in the plugin configuration, merge them with the new ones
+                    resources.getLabels().getPod().putAll(podLabels);
+                }
+            }
+        } catch (IOException ex) {
+            // ignore setting Red Hat pod labels if they are not found
+        }
+
         // Manager for calling enrichers.
         MavenEnricherContext.Builder ctxBuilder = new MavenEnricherContext.Builder()
                 .project(project)
