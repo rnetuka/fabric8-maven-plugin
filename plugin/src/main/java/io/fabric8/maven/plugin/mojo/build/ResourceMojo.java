@@ -66,6 +66,7 @@ import javax.validation.ConstraintViolationException;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -470,6 +471,24 @@ public class ResourceMojo extends AbstractResourceMojo {
             .openshiftDependencyResources(openshiftDependencyResources);
         if (resources != null) {
             ctxBuilder.namespace(resources.getNamespace());
+        }
+        if (resources == null) {
+            resources = new ResourceConfig();
+        }
+        if (resources.getLabels().getPod() == null) {
+            Properties podLabels = new Properties();
+            try (InputStream is = getClass().getResourceAsStream("/pod-labels.properties")) {
+                if (is != null) {
+                    podLabels.load(is);
+                    for (Map.Entry<Object, Object> entry : podLabels.entrySet()) {
+                        podLabels.replace(entry.getKey(), "${project.artifactId}", project.getArtifactId());
+                        podLabels.replace(entry.getKey(), "${project.version}", project.getVersion());
+                    }
+                    resources.getLabels().setPod(podLabels);
+                }
+            } catch (IOException ex) {
+                // ignore setting pod labels
+            }
         }
         EnricherManager enricherManager = new EnricherManager(resources, ctxBuilder.build());
 

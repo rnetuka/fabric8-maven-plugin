@@ -77,4 +77,8 @@ public class MetaDataConfig {
     public Properties getDeployment() {
         return deployment;
     }
+
+    public void setPod(Properties pod) {
+        this.pod = pod;
+    }
 }
