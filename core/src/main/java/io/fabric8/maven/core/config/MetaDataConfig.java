@@ -86,4 +86,8 @@ public class MetaDataConfig {
     public Properties getIngress() {
         return ingress;
     }
+
+    public void setPod(Properties pod) {
+        this.pod = pod;
+    }
 }
