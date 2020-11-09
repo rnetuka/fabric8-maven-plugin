@@ -60,7 +60,8 @@ public class KarafHealthCheckEnricher extends AbstractHealthCheckEnricher {
     //
     private Probe discoverKarafProbe(String path, int initialDelay) {
 
-        final Optional<Map<String, Object>> configurationValues = getContext().getConfiguration().getPluginConfiguration("maven", "karaf-maven-plugin");
+       
+        final Optional<Map<String, Object>> configurationValues = getContext().getConfiguration().getPluginConfiguration("maven", "org.jboss.redhat-fuse:karaf-maven-plugin");
 
         if (!configurationValues.isPresent()) {
             return null;
@@ -89,6 +90,7 @@ public class KarafHealthCheckEnricher extends AbstractHealthCheckEnricher {
 
                 for (String featureValue : features) {
                     if ("fabric8-karaf-checks".equals(featureValue)) {
+                    
                         return new ProbeBuilder().withNewHttpGet().withNewPort(DEFAULT_HEALTH_CHECK_PORT).withPath(path).endHttpGet()
                                 .withSuccessThreshold(getSuccessThreshold())
                                 .withFailureThreshold(getFailureThreshold())
