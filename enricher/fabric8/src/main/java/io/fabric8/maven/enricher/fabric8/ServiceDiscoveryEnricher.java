@@ -17,6 +17,7 @@ package io.fabric8.maven.enricher.fabric8;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -27,6 +28,7 @@ import javax.xml.xpath.XPathFactory;
 import io.fabric8.kubernetes.api.builder.TypedVisitor;
 import io.fabric8.kubernetes.api.model.KubernetesListBuilder;
 import io.fabric8.kubernetes.api.model.ServiceBuilder;
+import io.fabric8.kubernetes.api.model.ServicePort;
 import io.fabric8.maven.core.config.PlatformMode;
 import io.fabric8.maven.enricher.api.MavenEnricherContext;
 import org.w3c.dom.Document;
@@ -45,12 +47,14 @@ public class ServiceDiscoveryEnricher extends BaseEnricher {
     static final String DISCOVERY_VERSION = "discovery-version";
     static final String SCHEME            = "scheme";
     static final String PATH              = "path";
+    static final String PORT              = "port";
     static final String DESCRIPTION_PATH  = "description-path";
     //Service Labels
     static final String DISCOVERABLE      = "discoverable";
 
     private File springConfigDir;
     private String path             = null;
+    private String port             = "80";
     private String scheme           = "http";
     private String descriptionPath  = null;
     private String discoverable     = null;
@@ -61,12 +65,13 @@ public class ServiceDiscoveryEnricher extends BaseEnricher {
         discoverable,
         discoveryVersion,
         path,
+        port,
         scheme,
         springDir;
 
         public String def() { return d; } protected String d;
     }
-    
+
     public ServiceDiscoveryEnricher(MavenEnricherContext buildContext) {
         super(buildContext, ENRICHER_NAME);
 
@@ -80,6 +85,16 @@ public class ServiceDiscoveryEnricher extends BaseEnricher {
         builder.accept(new TypedVisitor<ServiceBuilder>() {
             @Override
             public void visit(ServiceBuilder serviceBuilder) {
+                if (serviceBuilder.buildSpec() != null) {
+                    List<ServicePort> ports = serviceBuilder.buildSpec().getPorts();
+                    if (! ports.isEmpty()) {
+                        ServicePort firstServicePort = ports.iterator().next();
+                        port = firstServicePort.getPort().toString();
+                        log.info("Using first mentioned service port '%s' " , port);
+                    } else {
+                        log.warn("No service port was found");
+                    }
+                }
                 tryCamelDSLProject();
                 if (discoverable != null) {
                     Map<String, String> annotations = new HashMap<>();
@@ -88,6 +103,7 @@ public class ServiceDiscoveryEnricher extends BaseEnricher {
                     if (getConfig(Config.path, path) != null) {
                         annotations.put(PREFIX + PATH, getConfig(Config.path, path));
                     }
+                    annotations.put(PREFIX + PORT, getConfig(Config.port, port));
                     if (getConfig(Config.descriptionPath, descriptionPath) != null) {
                         annotations.put(PREFIX + DESCRIPTION_PATH, getConfig(Config.descriptionPath, descriptionPath));
                     }
