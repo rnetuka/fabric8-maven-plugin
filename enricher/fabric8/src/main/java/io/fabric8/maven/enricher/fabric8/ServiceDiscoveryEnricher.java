@@ -99,7 +99,7 @@ public class ServiceDiscoveryEnricher extends BaseEnricher {
                     }
 
                     Map<String, String> labels = new HashMap<>();
-                    String labelName = PREFIX + DISCOVERABLE;
+                    String labelName = PREFIX.substring(0, PREFIX.length() - 1);
                     labels.put(labelName, getConfig(Config.discoverable, discoverable));
                     if (log.isVerboseEnabled()) {
                         log.verbose(Logger.LogVerboseCategory.BUILD, "Add %s label: %s=%s", PREFIX,
